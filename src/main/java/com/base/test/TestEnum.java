@@ -5,7 +5,7 @@ package com.base.test;
  * Created by kevin on 2017/8/15 13:57.
  */
 public enum TestEnum {
-    INSTANCE(1,"a","aa"),A(2,"b","bb"),B(3,"c","cc");
+    INSTANCE(1,"a","aa"),A(2,"b","bb"),B(3,"c","cc"),c(4,"d","dd");
     private int count;
     private String cha;
     private String thi;
