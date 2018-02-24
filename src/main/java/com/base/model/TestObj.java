@@ -1,5 +1,7 @@
 package com.base.model;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * <p>
  * Mongo data Bean
@@ -45,5 +47,10 @@ public class TestObj {
 
     public void setTestId(String testId) {
         this.testId = testId;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
