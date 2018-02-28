@@ -3,10 +3,7 @@ package com.base.test;
 import com.alibaba.fastjson.JSON;
 import com.base.model.TestObj;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <P></P>
@@ -50,7 +47,9 @@ public class TestLambda {
         //map.put(null,testObjOne);
 
         map.values().stream().filter(a->a!=null).forEach(b->System.out.println(JSON.toJSONString(b)));
+        System.out.println("-------------");
         map.values().stream().filter(a->a!=null).forEach(TestObj::toString);
+        System.out.println("-------------");
     }
 
     public static void main(String []args){
