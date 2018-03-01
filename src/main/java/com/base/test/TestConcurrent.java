@@ -12,14 +12,14 @@ import java.util.concurrent.*;
  * @create 2018-02-28 17:32
  **/
 public class TestConcurrent {
-    private static ExecutorService executorService = Executors.newFixedThreadPool(3);
+    private static ExecutorService executorService = Executors.newFixedThreadPool(5);
 
     private CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 
     public void testExecutorService() throws InterruptedException {
-        List<Callable<String>> list= new ArrayList<Callable<String>>();
+        List<Callable<Object>> list= new ArrayList<Callable<Object>>();
 
-        list.add(new Callable<String>() {
+        list.add(new Callable<Object>() {
             @Override
             public String call() throws Exception {
                 System.out.println("Task " + Thread.currentThread().getId() + ":  begin " + DateUtils.y_M_d_H_m_s_S.getFormatDate(new Date()));
@@ -39,9 +39,9 @@ public class TestConcurrent {
             }
         });
 
-        list.add(new Callable<String>() {
+        list.add(new Callable<Object>() {
             @Override
-            public String call() throws Exception {
+            public Object call() throws Exception {
                 System.out.println("Task " + Thread.currentThread().getId() + ":  begin " + DateUtils.y_M_d_H_m_s_S.getFormatDate(new Date()));
                 try {
                     Thread.sleep(4000);
@@ -59,9 +59,9 @@ public class TestConcurrent {
             }
         });
 
-        list.add(new Callable<String>() {
+        list.add(new Callable<Object>() {
             @Override
-            public String call() throws Exception {
+            public Object call() throws Exception {
                 System.out.println("Task " + Thread.currentThread().getId() + ":  begin " + DateUtils.y_M_d_H_m_s_S.getFormatDate(new Date()));
                 try {
                     Thread.sleep(6000);
@@ -79,7 +79,7 @@ public class TestConcurrent {
             }
         });
 
-        List<Future<String>> futures = executorService.invokeAll(list);
+        List<Future<Object>> futures = executorService.invokeAll(list);
 
         executorService.shutdown();
     }
