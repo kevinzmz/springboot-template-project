@@ -1,9 +1,12 @@
 package com.base.test;
 
+import org.apache.commons.lang3.time.DateUtils;
+
 import java.time.Clock;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.Date;
 
 /**
  * 测试java8 新版日期时间处理api
@@ -22,5 +25,8 @@ public class TestTime {
     }
     public static void main(String[] args) {
         getLocalTime();
+        Date date = new Date();
+        int minutes = 5;
+        System.out.println(DateUtils.addMinutes(date,-minutes));
     }
 }

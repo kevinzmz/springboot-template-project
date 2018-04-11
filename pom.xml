@@ -88,10 +88,14 @@
             <artifactId>axios</artifactId>
             <version>0.15.2</version>
         </dependency>
+
+        <!-- 增加mongodb -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
         </dependency>
+
+        <!-- 增加logback -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
