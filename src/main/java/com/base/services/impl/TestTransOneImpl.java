@@ -10,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 /**
- * <p></p>
+ * <p>
+ *     测试spring事务管理
+ * </p>
+ * @see com.base.services.TestTransOne
+ * @see com.base.services.impl TestTransImpl 事务入口
  *
  * @author kevin
  * @create 2018-04-12 18:10
