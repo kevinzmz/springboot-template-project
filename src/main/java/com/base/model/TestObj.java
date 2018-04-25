@@ -17,6 +17,10 @@ public class TestObj {
     private String checkBalanceFkag;
     private String testId;
 
+    public TestObj(){
+        
+    }
+
     public String getId() {
         return id;
     }
