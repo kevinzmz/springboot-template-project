@@ -1,4 +1,4 @@
-package com.base.pattern.ProxyImage;
+package com.base.pattern.Proxy;
 
 /**
  * <p>代理类</p>

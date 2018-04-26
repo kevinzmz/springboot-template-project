@@ -1,4 +1,4 @@
-package com.base.pattern.ProxyImage;
+package com.base.pattern.Proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

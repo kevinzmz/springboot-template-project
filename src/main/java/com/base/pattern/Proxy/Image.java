@@ -1,4 +1,4 @@
-package com.base.pattern.ProxyImage;
+package com.base.pattern.Proxy;
 
 /**
  * <p>被代理类接口</p>
