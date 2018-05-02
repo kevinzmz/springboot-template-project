@@ -22,8 +22,4 @@ public class RealImage implements Image{
     public void display() {
         System.out.println("Displaying" + fileName);
     }
-
-    private void loadFromDist(String filename){
-        System.out.println("loading" + fileName);
-    }
 }

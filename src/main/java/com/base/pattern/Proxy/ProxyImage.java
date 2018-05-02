@@ -2,6 +2,7 @@ package com.base.pattern.Proxy;
 
 /**
  * <p>代理类</p>
+ * 静态代理
  *
  * @author kevin
  * @create 2018-04-08 16:04
