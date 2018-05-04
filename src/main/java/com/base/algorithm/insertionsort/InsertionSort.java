@@ -21,7 +21,8 @@ public class InsertionSort {
             //返回比当前值小的位置
             do{
                 location = location-1;
-            }while(location>=0&&current<input[location]);
+                //确定是按照升序还是降序排列
+            }while(location>=0 && current>input[location]);
             //+1作为当前值的位置
              location++;
 
