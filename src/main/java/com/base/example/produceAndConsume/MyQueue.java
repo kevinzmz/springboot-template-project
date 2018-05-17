@@ -5,12 +5,17 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <p></p>
+ * <p>
+ *     仓库同一时间只能保证只有一个生产者或消费者
+ * </p>
  *
  * @author kevin
  * @create 2018-05-17 13:53
  **/
 public class MyQueue {
+    /**
+     * 定义链表作为仓库
+     */
     private static List<String> queueList = Collections.synchronizedList(new ArrayList<String>());
 
     /**
