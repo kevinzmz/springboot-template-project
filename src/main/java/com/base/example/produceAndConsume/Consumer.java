@@ -13,7 +13,7 @@ public class Consumer implements Runnable {
             判断仓库是否有货物
          */
         if (MyQueue.getQueueList().size() == 0) {
-            System.out.println("消费者等待");
+            System.out.println(Thread.currentThread().getName().toString()+"消费者等待");
             MyQueue.queueWait();
         } else {
             /*
@@ -24,7 +24,7 @@ public class Consumer implements Runnable {
             /*
                 消费
              */
-            System.out.println("消费："+MyQueue.getQueueList().remove(0) + ", 消费数："+count);
+            System.out.println(Thread.currentThread().getName().toString()+"消费："+MyQueue.getQueueList().remove(0) + ", 消费数："+count);
             /*
                 等待，用于唤醒时和生产者公平竞争
              */

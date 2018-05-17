@@ -13,7 +13,7 @@ public class Producer implements Runnable {
             判断是否超过了最大库存数
          */
         if (MyQueue.getQueueList().size() == MyQueue.getMaxStorageCount()) {
-            System.out.println("生产者等待");
+            System.out.println(Thread.currentThread().getName().toString()+"生产者等待");
             MyQueue.queueWait();
         } else {
             /*
@@ -26,7 +26,7 @@ public class Producer implements Runnable {
              */
             String str = String.valueOf(Math.random());
             MyQueue.getQueueList().add(str);
-            System.out.println("生产：" + str + ", 生产数："+count);
+            System.out.println(Thread.currentThread().getName().toString()+"生产：" + str + ", 生产数："+count);
             /*
                 等待，用于唤醒时和消费者公平竞争
              */

@@ -11,17 +11,21 @@ public class pandcDemo {
         /*
             设置循环次数
          */
-        MyQueue.setCycleCount(40);
+        MyQueue.setCycleCount(100);
         /*
             设置最大库存
          */
         MyQueue.setMaxStorageCount(1);
 
-        Producer p = new Producer();
-        Consumer c = new Consumer();
-        Thread pro = new Thread(p);
-        Thread con = new Thread(c);
-        pro.start();
-        con.start();
+        Thread proOne = new Thread(new Producer());
+        Thread proTwo = new Thread(new Producer());
+        Thread proThree = new Thread(new Producer());
+        Thread conOne = new Thread(new Consumer());
+        Thread conTwo = new Thread(new Consumer());
+        proOne.start();
+        proTwo.start();
+        proThree.start();
+        conOne.start();
+        conTwo.start();
     }
 }
