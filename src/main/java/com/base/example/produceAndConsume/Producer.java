@@ -14,7 +14,10 @@ public class Producer implements Runnable {
          */
         if (MyQueue.getQueueList().size() == MyQueue.getMaxStorageCount()) {
             System.out.println(Thread.currentThread().getName().toString()+"生产者等待");
-            MyQueue.queueWait();
+            /*
+                等待1毫秒后继续查看是否可以生产
+             */
+            MyQueue.queueWaitTime(1);
         } else {
             /*
                 增加生产者消费次数

@@ -14,7 +14,10 @@ public class Consumer implements Runnable {
          */
         if (MyQueue.getQueueList().size() == 0) {
             System.out.println(Thread.currentThread().getName().toString()+"消费者等待");
-            MyQueue.queueWait();
+            /*
+                等待1毫秒后继续查看是否可以消费
+             */
+            MyQueue.queueWaitTime(1);
         } else {
             /*
                 增加消费计数
