@@ -7,17 +7,29 @@ package com.base.example.produceAndConsume;
  * @create 2018-05-17 13:52
  **/
 public class Producer implements Runnable {
-    private volatile static int count = 0;
 
     public void put() throws InterruptedException {
-        if (MyQueue.getQueueList().size() == 10) {
+        /*
+            判断是否超过了最大库存数
+         */
+        if (MyQueue.getQueueList().size() == MyQueue.getMaxStorageCount()) {
             System.out.println("生产者等待");
             MyQueue.queueWait();
         } else {
-            count++;
+            /*
+                增加生产者消费次数
+             */
+            int count = MyQueue.getProOperCount() + 1;
+            MyQueue.setProOperCount(count);
+            /*
+                生产
+             */
             String str = String.valueOf(Math.random());
             MyQueue.getQueueList().add(str);
             System.out.println("生产：" + str + ", 生产数："+count);
+            /*
+                等待，用于唤醒时和消费者公平竞争
+             */
             MyQueue.queueWaitTime(1);
         }
     }
@@ -25,10 +37,19 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         try {
-            while (count < 30) {
+            /*
+                按照指定的量进行生产
+             */
+            while (MyQueue.getProOperCount()< MyQueue.getCycleCount()) {
+                /*
+                    将仓库添加到线程监视器
+                 */
                 synchronized (MyQueue.getQueueList()) {
                     put();
-                    MyQueue.queueNotify();
+                    /*
+                        随机唤醒生产者或消费者
+                     */
+                    MyQueue.queueNotifyAll();
                 }
             }
         } catch (InterruptedException e) {

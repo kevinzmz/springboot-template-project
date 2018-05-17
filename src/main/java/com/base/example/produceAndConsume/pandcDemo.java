@@ -1,8 +1,5 @@
 package com.base.example.produceAndConsume;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 /**
  * <p></p>
  *
@@ -11,13 +8,20 @@ import java.util.concurrent.BlockingQueue;
  **/
 public class pandcDemo {
     public static void main(String[] args) {
-        Producer p =  new Producer();
+        /*
+            设置循环次数
+         */
+        MyQueue.setCycleCount(40);
+        /*
+            设置最大库存
+         */
+        MyQueue.setMaxStorageCount(1);
+
+        Producer p = new Producer();
         Consumer c = new Consumer();
         Thread pro = new Thread(p);
         Thread con = new Thread(c);
         pro.start();
         con.start();
-
-        BlockingQueue b = new ArrayBlockingQueue(10);
     }
 }
