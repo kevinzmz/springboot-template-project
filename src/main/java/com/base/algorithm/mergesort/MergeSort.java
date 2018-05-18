@@ -12,6 +12,14 @@ import com.alibaba.fastjson.JSON;
  **/
 public class MergeSort {
 
+    /**
+     * 将已经排好的子队列进行合并排序
+     * @param arraySorting
+     * @param begin
+     * @param middle
+     * @param end
+     * @return
+     */
     public static int[] merge(int[] arraySorting,int begin,int middle,int end){
         int n1 = middle-begin +1;
         int n2 = end-middle;
@@ -28,6 +36,9 @@ public class MergeSort {
 
         int a = 0;
         int b = 0;
+        /*
+            循环合并两个子队列
+         */
         for(int i=begin;i<=end;i++){
             if(leftArray[a]<=rightArray[b]){
                 arraySorting[i] = leftArray[a];
@@ -37,6 +48,9 @@ public class MergeSort {
                 b++;
             }
 
+            /*
+                如果其中一个子队列已经循环结束，另一个子队列直接追加拷贝到主队列
+             */
             if(a==n1 && b<n2){
                 int k = i+1;
                 for(int j=k;k<=end;k++){
@@ -56,6 +70,12 @@ public class MergeSort {
         return arraySorting;
     }
 
+    /**
+     * 递归将队列拆分成子队列并进行排序合并
+     * @param arrayFinal
+     * @param begin
+     * @param end
+     */
     public static void mergeSort(int[] arrayFinal,int begin,int end){
         int middle = (begin+end)/2;
         if(begin<end){
