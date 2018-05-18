@@ -15,18 +15,16 @@ public class MergeSort {
     public static int[] merge(int[] arraySorting,int begin,int middle,int end){
         int n1 = middle-begin +1;
         int n2 = end-middle;
-        int[] leftArray = new int[n1+1];
-        int[] rightArray = new int[n2+1];
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
 
         for(int i=0;i<n1;i++){
             leftArray[i] = arraySorting[begin+i];
         }
-        leftArray[n1] = 999999;
 
         for(int i=0;i<n2;i++){
             rightArray[i] = arraySorting[middle+i+1];
         }
-        rightArray[n2] = 999999;
 
         int a = 0;
         int b = 0;
@@ -37,6 +35,22 @@ public class MergeSort {
             }else{
                 arraySorting[i] = rightArray[b];
                 b++;
+            }
+
+            if(a==n1 && b<n2){
+                int k = i+1;
+                for(int j=k;k<=end;k++){
+                    arraySorting[k] = rightArray[b];
+                    b++;
+                }
+                break;
+            }else if(b==n2 && a<n1){
+                int k = i+1;
+                for(int j = k;k<=end;k++){
+                    arraySorting[k] = leftArray[a];
+                    a++;
+                }
+                break;
             }
         }
         return arraySorting;
