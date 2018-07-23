@@ -2,13 +2,12 @@ package com.base.example.javatime;
 
 import org.apache.commons.lang3.time.DateUtils;
 
-import java.time.Clock;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.Month;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.format.TextStyle;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * <p>java.time包实现</p>
@@ -39,6 +38,8 @@ public class TestJavaTime {
         Date date = new Date();
         int minutes = 5;
         System.out.println(DateUtils.addMinutes(date,-minutes));
+
+        System.out.println(ZoneId.systemDefault().getDisplayName(TextStyle.FULL, Locale.CHINA));
     }
 
     public static void main(String[] args) {
