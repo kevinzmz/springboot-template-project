@@ -23,6 +23,9 @@ public class MyInvocationHandler implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        /*
+            对方法和参数做切面拦截
+         */
         Object result = method.invoke(target,args);
         return result;
     }
