@@ -1,4 +1,4 @@
-package test.com.base.pattern.bridge;
+package test.com.base;
 
 import org.junit.After;
 import org.junit.Before;
