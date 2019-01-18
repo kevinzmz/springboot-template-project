@@ -1,4 +1,4 @@
-package test.com.base;
+package com.base;
 
 import org.junit.After;
 import org.junit.Before;
