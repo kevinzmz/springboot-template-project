@@ -41,7 +41,7 @@ public class InsertionSort {
 
     /**
      * 插入排序，优化代码
-     * for i=2 to A.length
+     * for i=1 to A.length-1
      *      key = A[i]
      *      j = i-1
      *
