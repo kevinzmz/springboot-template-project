@@ -19,7 +19,7 @@ public class DynamicProxy {
     public Image getInstance(){
         Image realImage = new RealImage(param);
 
-        Image image = (Image) Proxy.newProxyInstance(realImage.getClass().getClassLoader(), realImage.getClass().getInterfaces(),new MyInvocationHandler(realImage));
+        Image image = (Image) Proxy.newProxyInstance(realImage.getClass().getClassLoader(), realImage.getClass().getInterfaces(),new InvoHandler(realImage));
 
         return image;
     }

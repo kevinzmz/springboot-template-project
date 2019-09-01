@@ -7,5 +7,5 @@ package com.base.pattern.Proxy;
  * @create 2018-04-08 15:58
  **/
 public interface Image {
-    void display();
+    String display();
 }

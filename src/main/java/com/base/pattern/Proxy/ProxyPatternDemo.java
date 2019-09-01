@@ -22,6 +22,6 @@ public class ProxyPatternDemo {
          * 动态代理
          */
         Image visitor = new DynamicProxy("test_10mb.jpg").getInstance();
-        visitor.display();
+        System.out.println(visitor.display());
     }
 }

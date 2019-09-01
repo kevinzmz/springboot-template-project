@@ -15,7 +15,8 @@ public class RealImage implements Image{
     }
 
     @Override
-    public void display() {
+    public String display() {
         System.out.println("Displaying：" + fileName);
+        return null;
     }
 }

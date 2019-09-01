@@ -16,10 +16,12 @@ public class ProxyImage implements Image{
     }
 
     @Override
-    public void display() {
+    public String display() {
         if(realImage==null){
             realImage = new RealImage(fileName);
         }
         realImage.display();
+
+        return null;
     }
 }
