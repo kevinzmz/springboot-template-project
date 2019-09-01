@@ -12,10 +12,6 @@ import java.lang.reflect.Method;
 public class MyInvocationHandler implements InvocationHandler{
     private Object target;
 
-    MyInvocationHandler(){
-        super();
-    }
-
     MyInvocationHandler(Object target){
         super();
         this.target = target;
