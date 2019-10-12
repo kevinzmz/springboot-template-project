@@ -14,6 +14,10 @@ public class TestJson {
         System.out.println(JSON.toJSONString(testObj));
     }
 
+    public void test(TestObj testObj){
+        System.out.println(JSON.toJSONString(testObj));
+    }
+
     public static void main(String[] args) {
         testJson(null);
     }

@@ -1,6 +1,8 @@
 package com.base.test;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,6 +21,12 @@ public class TestMap {
             if(entry.getValue()!=null && entry.getValue() >= 10){
                 System.out.println(entry.getKey());
             }
+        }
+
+        Iterator iterator = test.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry entry = (Map.Entry) iterator.next();
+            System.out.println(entry.getKey());
         }
     }
 }

@@ -21,6 +21,10 @@ public class TestObj {
         
     }
 
+    public TestObj(String id){
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
