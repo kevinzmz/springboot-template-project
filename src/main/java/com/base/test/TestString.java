@@ -10,14 +10,20 @@ import java.util.regex.Pattern;
  **/
 public class TestString {
     public static void main(String[] args) {
-        String pattern = "[a-zA-Z0-9]+";
+        String pattern = "^(?=.*?[0-9])(?=.*?[a-z])(?=.*?[A-Z]).{8,18}$";
 
         String chinese = "中国";
-        String stringDesc = "ERljsf0131";
+        String stringDesc = "ERljsfab";
         String stringDescSec = "ERljsf-0131";
+        String station = "BCA_'淄博'服务公司_86";
 
         System.out.println(Pattern.matches(pattern,chinese));
         System.out.println(Pattern.matches(pattern,stringDesc));
         System.out.println(Pattern.matches(pattern,stringDescSec));
+
+
+        System.out.println(station.indexOf("淄博"));
+        System.out.println(station.indexOf("BCA"));
+        System.out.println(station.indexOf("服务公司"));
     }
 }

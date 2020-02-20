@@ -13,7 +13,7 @@ public class MyThread implements Runnable{
     public void run(){
         System.out.println("线程开始");
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }catch(InterruptedException e){
             System.out.println("异常----"+e.getMessage());
         }

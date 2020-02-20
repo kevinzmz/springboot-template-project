@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/repository-intellij-private/private-three">
+        <classes>
+            <class name="com.base.test.HelloWorldTest">
+                <methods>
+                    <include name="testHello"/>
+                </methods>
+            </class>
+        </classes>
+<!--        <packages>
+            <package name="com.base.test.*"/>
+        </packages>-->
+    </test>
+</suite>

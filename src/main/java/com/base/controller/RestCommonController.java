@@ -5,6 +5,7 @@ import com.base.utils.UUIDUtil;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * <P></P>
@@ -42,6 +44,7 @@ public class RestCommonController {
         TestObj test = mongoTemplate.findById("20170102145900", TestObj.class);
         Query query = new Query(Criteria.where("businessType").is(1).and("testId").ne("9bf444e0659749bc8c6e5ec2bbaa61d4"));
         List<TestObj> testOne = mongoTemplate.find(query,TestObj.class);
+        Optional.ofNullable(testObj);
 
         return testOne;
     }
