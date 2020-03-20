@@ -29,7 +29,6 @@ public class InvoHandler implements java.lang.reflect.InvocationHandler {
 
         //对方法和参数进行拦截
         Object result = method.invoke(target,args);
-        //return result;
-        return "test";
+        return result;
     }
 }

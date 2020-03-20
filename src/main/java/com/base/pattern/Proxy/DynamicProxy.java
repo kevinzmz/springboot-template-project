@@ -10,16 +10,15 @@ import java.lang.reflect.Proxy;
  * @date 2019/9/1 10:44
  **/
 public class DynamicProxy {
-    private String param;
+    private Image param;
 
-    public DynamicProxy(String param){
+    public DynamicProxy(Image param){
         this.param= param;
     }
 
     public Image getInstance(){
-        Image realImage = new RealImage(param);
-
-        Image image = (Image) Proxy.newProxyInstance(realImage.getClass().getClassLoader(), realImage.getClass().getInterfaces(),new InvoHandler(realImage));
+        Image image = (Image) Proxy.newProxyInstance(param.getClass().getClassLoader(), param.getClass().getInterfaces(),new InvoHandler(param));
+       //Image image = (Image) Proxy.newProxyInstance(null, realImage.getClass().getInterfaces(),new InvoHandler(realImage));
 
         return image;
     }
