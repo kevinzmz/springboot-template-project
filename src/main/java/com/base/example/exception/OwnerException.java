@@ -13,7 +13,22 @@ public class OwnerException extends Exception{
         super(message);
     }
 
+    public Integer testFinal(){
+        Integer result = 2;
+        try{
+            System.out.println("test final!");
+        }finally {
+            result = 1;
+            if(result == 1){
+                return result;
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) throws OwnerException {
-        throw new OwnerException("异常");
+        System.out.println(new OwnerException("exception").testFinal());
+
+        //throw new OwnerException("异常");
     }
 }

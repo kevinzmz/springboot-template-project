@@ -13,6 +13,8 @@ public class TestString {
         String pattern = "^(?=.*?[0-9])(?=.*?[a-z])(?=.*?[A-Z]).{8,18}$";
 
         String chinese = "中国";
+        String china = "中国";
+        String ch = new String("中国");
         String stringDesc = "ERljsfab";
         String stringDescSec = "ERljsf-0131";
         String station = "BCA_'淄博'服务公司_86";
@@ -25,5 +27,11 @@ public class TestString {
         System.out.println(station.indexOf("淄博"));
         System.out.println(station.indexOf("BCA"));
         System.out.println(station.indexOf("服务公司"));
+
+        System.out.println(chinese == china);
+        System.out.println(chinese.intern() == china.intern());
+        System.out.println(chinese == ch);
+        System.out.println(chinese.intern() == ch.intern());
+        System.out.println(chinese.equals(ch));
     }
 }

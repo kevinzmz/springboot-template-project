@@ -2,6 +2,8 @@ package com.base.model;
 
 import com.alibaba.fastjson.JSON;
 
+import java.util.List;
+
 /**
  * <p>
  * Mongo data Bean
@@ -16,6 +18,7 @@ public class TestObj {
     private Integer businessType;
     private String checkBalanceFkag;
     private String testId;
+    private List<User> userList;
 
     public TestObj(){
         
@@ -55,6 +58,14 @@ public class TestObj {
 
     public void setTestId(String testId) {
         this.testId = testId;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
     @Override

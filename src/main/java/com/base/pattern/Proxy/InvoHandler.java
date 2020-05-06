@@ -1,10 +1,6 @@
 package com.base.pattern.Proxy;
 
-import com.alibaba.fastjson.JSON;
-import com.base.controller.FirstController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
@@ -13,7 +9,7 @@ import java.lang.reflect.Method;
  * @author kevin
  * @create 2018-04-08 16:24
  **/
-public class InvoHandler implements java.lang.reflect.InvocationHandler {
+public class InvoHandler implements InvocationHandler {
     //private static final Logger logger = LoggerFactory.getLogger(InvoHandler.class);
 
     private Object target;
