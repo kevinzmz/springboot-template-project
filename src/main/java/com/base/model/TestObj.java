@@ -2,6 +2,7 @@ package com.base.model;
 
 import com.alibaba.fastjson.JSON;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  * @create 2018-01-02 14:43
  * @Modified By:
  **/
-public class TestObj {
+public class TestObj implements Serializable {
     private String id;
     private Integer businessType;
     private String checkBalanceFkag;
