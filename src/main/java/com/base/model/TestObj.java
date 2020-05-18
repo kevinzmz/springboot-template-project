@@ -15,6 +15,8 @@ import java.util.List;
  * @Modified By:
  **/
 public class TestObj implements Serializable {
+    private static final Long serialVersionUID = 1L;
+
     private String id;
     private Integer businessType;
     private String checkBalanceFkag;

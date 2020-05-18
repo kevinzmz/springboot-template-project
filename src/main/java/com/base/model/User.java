@@ -8,6 +8,8 @@ import java.io.Serializable;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User implements Serializable {
+    private static final Long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
