@@ -1,5 +1,7 @@
 package com.base.test;
 
+import com.base.model.TestObj;
+
 import java.util.regex.Pattern;
 
 /**
@@ -33,5 +35,8 @@ public class TestString {
         System.out.println(chinese == ch);
         System.out.println(chinese.intern() == ch.intern());
         System.out.println(chinese.equals(ch));
+
+        Integer a = null;
+        System.out.println(a!=0);
     }
 }
