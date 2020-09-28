@@ -179,6 +179,12 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <scm>
+        <url>https://github.com/kevinzmz/springboot-template-project</url>
+        <connection>scm:git:https://github.com/kevinzmz/springboot-template-project.git</connection>
+        <developerConnection>scm:git:https://github.com/kevinzmz/springboot-template-project.git</developerConnection>
+    </scm>
+
     <build>
         <finalName>base-private</finalName>
         <plugins>
@@ -221,6 +227,16 @@
                         <coverage-check>80</coverage-check>
                         <coverage-outputDir>${project.build.directory}/codecoverage-output</coverage-outputDir>
                     </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagNameFormat>V@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>

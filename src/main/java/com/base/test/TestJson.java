@@ -1,8 +1,13 @@
 package com.base.test;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.base.model.TestObj;
+import com.base.model.TestObjThree;
+import com.base.model.User;
+import com.base.model.UserSec;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +25,30 @@ public class TestJson {
         System.out.println(JSON.toJSONString(testObj));
     }
 
+    public static void testTypeReference(){
+        List<TestObjThree<User>> a = new ArrayList<>();
+        User user = new User();
+        user.setId(1);
+        user.setEmail("aaaa");
+        List<User> users = new ArrayList<>();
+        users.add(user);
+
+        TestObjThree<User> testObjThree = new TestObjThree<>();
+        testObjThree.setId("11");
+        testObjThree.setUserList(users);
+
+        a.add(testObjThree);
+
+        String testStr = JSON.toJSONString(a);
+        System.out.println(testStr);
+
+        List<TestObjThree<UserSec>> b = JSON.parseObject(testStr,new TypeReference<List<TestObjThree<UserSec>>>(){});
+
+        String testStrSec = JSON.toJSONString(b);
+
+        System.out.println(testStrSec);
+    }
+
     public static void main(String[] args) {
         testJson(null);
 
@@ -31,6 +60,8 @@ public class TestJson {
 
         List c = null;
         System.out.println();
+
+        testTypeReference();
 
     }
 }
