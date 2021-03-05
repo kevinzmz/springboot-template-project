@@ -36,7 +36,16 @@ public class TestString {
         System.out.println(chinese.intern() == ch.intern());
         System.out.println(chinese.equals(ch));
 
-        Integer a = null;
-        System.out.println(a!=0);
+   /*     Integer a = null;
+        System.out.println(a!=0);*/
+
+
+        String byteStr = "platformworker:Synchronize.WORK_ORDER_SUBMIT:_A022301201012774074";
+        System.out.println("=============== " + byteStr.getBytes().toString());
+
+        System.out.println(new byte[]{1});
+
+        System.out.println(chinese.length());
+        System.out.println(stringDesc.length());
     }
 }
