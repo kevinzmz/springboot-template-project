@@ -3,6 +3,7 @@ package com.base.model;
 import com.alibaba.fastjson.JSON;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +19,8 @@ public class TestObj implements Serializable {
     private static final Long serialVersionUID = 1L;
 
     private String id;
+    private Date date;
+    private int testInt;
     private Integer businessType;
     private String checkBalanceFkag;
     private String testId;
@@ -37,6 +40,22 @@ public class TestObj implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getTestInt() {
+        return testInt;
+    }
+
+    public void setTestInt(int testInt) {
+        this.testInt = testInt;
     }
 
     public Integer getBusinessType() {
