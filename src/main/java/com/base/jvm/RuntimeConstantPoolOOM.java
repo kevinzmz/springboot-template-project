@@ -21,5 +21,17 @@ public class RuntimeConstantPoolOOM {
         System.out.println(str2.intern() == str2);
         System.out.println(str2.intern());
         System.out.println(str2);
+
+        int a = 3;
+        int b = 3;
+        System.out.println(5+ ++a*8);
+        System.out.println(5+ b++*8);
+
+        int m = 7;
+        int n = 7;
+        int c = 2 * ++m;
+        int d = 2 * n++;
+
+        System.out.println(c + " " + d);
     }
 }

@@ -20,6 +20,8 @@ public class HelloWorld {
         List<User> list = new ArrayList<>();
         test.setUserList(list);
 
+        Runtime.getRuntime().availableProcessors();
+
         System.out.println(test.getUserList().size());
     }
 }
